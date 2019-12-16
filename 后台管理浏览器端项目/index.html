@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!--引入图标样式-->
+    <link rel="stylesheet" href="other/font-awesome-4.6.3/css/font-awesome.css">
+</head>
+<body>
+    <div class="pg-header">
+        <div class="logo">
+            <a href="javascript:" class="top_btn logo-content"><span>采购宝图标</span></a>
+        </div>
+        <div class="manage-cog">
+            <a href="javascript:" class="top_btn top-cog">
+                <span>
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </span>
+            </a>
+        </div>
+        <!--管理员-->
+        <div class="user-block">
+            <div class="user-manage" id="user-manage">
+            <a href="javascript:" class="top_btn user-head">
+                <span class="user-head-sp">
+                    <img src="imgs/default.png" alt="头像">
+                </span>
+            </a>
+            <!--管理员菜单-->
+
+            <div class="user-manage-menus">
+                <div class="user-head-msg">
+                    <div class="user-msg-hdic">
+                        <a href="javascript:" class="top_btn info-cell">
+                            <span class="info-cell-sp">
+                                <img src="imgs/default.png" alt="头像">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="user-msg-contant">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>用户名</td>
+                                    <td>:</td>
+                                    <td><a href="javascript:;">euewrqe</a></td>
+                                </tr>
+                                <tr>
+                                    <td>权限</td>
+                                    <td>:</td>
+                                    <td><a href="javascript:;">管理员</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="user-head-btns">
+                    <div class="user-btn-mng"><a href="javascript:void(0)">用户管理</a></div>
+                    <div class="user-btn-cancel">
+                        <!--注销登录,要把整个管理员菜单删除-->
+                        <a href="javascript:void(0)" class="js-ubc" uh-menu="user-manage">注销</a>
+                    </div>
+                </div>
+            </div>
+
+            </div >
+            <div class="user-login hidden" id="user-login">
+                <div class="user-login-l">
+                    <a href="javascript:" class="top_btn js-showmodel">
+                        <span>登录</span>
+                    </a>
+                </div>
+                <div class="user-login-r">
+                    <a href="javascript:" class="top_btn js-showmodel">
+                        <span>注册</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="pg-body">
+        <!--右侧菜单-->
+        <div class="pg-body-nav" id="pg-body-nav">
+            <div class="item it01" nav-mark="nav-mark">
+                <div class="nav-title">
+                    <a href="javascript:">员工列表</a>
+                </div>
+                <div class="nav-content">
+                    <a href="javascript:">管理员</a>
+                    <a href="javascript:">普通员工</a>
+                    <a href="javascript:">客人</a>
+                </div>
+            </div>
+            <div class="item it02" nav-mark="nav-mark">
+                <div class="nav-title">
+                    <a href="javascript:">商品列表</a>
+                </div>
+                <div class="nav-content hidden">
+                    <a href="javascript:">水产类</a>
+                    <a href="javascript:">蔬菜类</a>
+                    <a href="javascript:">水果类</a>
+                    <a href="javascript:">肉类</a>
+                </div>
+            </div>
+            <div class="item it03" nav-mark="nav-mark">
+                <div class="nav-title">
+                    <a href="javascript:">用户管理</a>
+                </div>
+                <div class="nav-content hidden">
+                    <a href="javascript:">VIP</a>
+                    <a href="javascript:">普通用户</a>
+                    <a href="javascript:">匿名用户</a>
+                </div>
+            </div>
+        </div>
+        <!--表格主体-->
+        <div class="pg-body-container">
+            <div class="staff-tb">
+
+                <input type="button" value="反选" id="all-revers-btn" />
+                <input type="button" value="添加" id="add-line-btn" />
+                <input type="button" value="删除" id="remove-line-btn" />
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th class="js-all-check"><input type="checkbox" /></th>
+                            <th>员工号</th>
+                            <th>姓名</th>
+                            <th>属组</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="js-check-item"><input type="checkbox" /></td>
+                            <td>2</td>
+                            <td>丛雨</td>
+                            <td>管理员</td>
+                        </tr>
+                        <tr>
+                            <td class="js-check-item"><input type="checkbox" /></td>
+                            <td>3</td>
+                            <td>euewrqe</td>
+                            <td>普通员工</td>
+                        </tr>
+                        <tr>
+                            <td class="js-check-item"><input type="checkbox" /></td>
+                            <td>4</td>
+                            <td>茉子</td>
+                            <td>特殊职员</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <span id="cancel-message"></span>
+            <span id="time_load"></span>
+        </div>
+    </div>
+    <div class="pg-footer"></div>
+
+    <!--模态对话框-->
+    <div class="model-filter hidden" id="model-filter"></div>
+    <div class="model-widget hidden" id="model-widget" style="left:300px;bottom:150px;">
+        <!--该对话框可移动-->
+        <div class="model-head js-model-head">
+            <div class="model-head-l">
+                <span class="model-head-lp">登录</span>
+            </div>
+            <div class="model-head-r">
+                <span class="model-head-lp">注册</span>
+                <a href="javascript:" class="js-md-close">
+                    <span class="close-icon"></span>
+                </a>
+            </div>
+        </div>
+        <div class="model-body">
+            <div class="model-body-l">
+                <div class="login-body">
+                    <form>
+                        <div class="pr">
+                            <input type="text" placeholder="用户名" name="user" class="user" />
+                        </div>
+                        <div class="pr">
+                            <input type="password" placeholder="密码" name="passwd" class="passwd" />
+                        </div>
+                    </form>
+                    <div class="box-btn">
+                        <a href="javascript:" class="box-btn-login js-head-btn">登录</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="model-body-r">
+                <div class="login-body" style="border-right: none">
+                <form>
+                        <div class="pr">
+                            <input type="text" placeholder="手机号" />
+                        </div>
+                        <div class="pr">
+                            <input type="text" placeholder="验证码" />
+                        </div>
+                        <div class="pr">
+                            <input type="password" placeholder="密码" />
+                        </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+        menu_show();
+        cancel_login();
+        model_show();
+        model_hidden();
+
+        move_model("model-widget","js-model-head");
+        check_change();
+
+        add_aline();
+        remove_aline();
+    </script>
+    <script>
+        setInterval(function () {
+            var time_obj=new Date();
+            document.getElementById("time_load").innerText=time_obj;
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" att="txt" >
+<input type="button" value="添加" att="add">
+<ul>
+    <li>可爱的艺术家们</li>
+</ul>
+<script src="jquery.js"></script>
+<script>
+    $("input[att='add']").click(function () {
+        var txt=$("<li>"+$("input[att='txt']").val()+"</li>");
+
+//        $("ul").append(txt);
+//        txt.appendTo("ul");
+//          $("ul").prepend(txt);
+//        $("ul").after(txt);
+//        $("ul").before(txt);
+//        txt.insertAfter("ul");
+//        $("ul").remove();
+        $("ul").empty();
+
+    })
+</script>
+</body>
+</html>

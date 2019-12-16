@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #chimg{
+            height: 200px;
+            width: 200px;
+        }
+        .on{
+            background-color: aquamarine;
+        }
+        .off{
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div id="chimg" class="on off">
+
+</div>
+<script src="jquery.js"></script>
+
+<script>
+    $("#chimg").click(function () {
+        //$(this).hasClass("off")?$(this).removeClass("off"):$(this).addClass("off");
+        $(this).toggleClass("off");
+    });
+</script>
+</body>
+</html>

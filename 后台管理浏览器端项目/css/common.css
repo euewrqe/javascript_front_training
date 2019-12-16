@@ -1,0 +1,365 @@
+body,ul{
+    margin:0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+/*公共隐藏*/
+.hidden{
+    display: none;
+}
+
+
+/*头部*/
+
+.pg-header{
+    /* position */
+    position: fixed;
+    z-index: 104;
+
+    /*  box-model */
+    width: 100%;
+    height: 48px;
+    min-width: 500px;
+    /* visual */
+    background-color: #354343;
+}
+
+
+
+.pg-header a.top_btn{
+    color:white;
+    font-size: 14px;
+    display: block;
+
+}
+.pg-header a.top_btn:hover{
+    background-color: #636665;
+}
+
+/*.logo*/
+.pg-header .logo{
+    width: 133px;
+    height: 48px;
+    background-color: #354343;
+    float: left;
+}
+
+.pg-header .logo a.logo-content{
+    height:48px;
+    width: 133px;
+    line-height: 48px;
+    text-align: center;
+
+}
+
+/* 登录注册 */
+.pg-header .user-login{
+    width: 25%;
+    height: 48px;
+    float: right;
+    margin-right: 42px;
+}
+
+.pg-header .user-login .user-login-l,
+.pg-header .user-login .user-login-r {
+    float: left;
+    margin: 0;
+}
+.pg-header .user-login .user-login-l a,
+.pg-header .user-login .user-login-r a{
+    display: inline-block;
+    height: 48px;
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+
+/* user_head */
+.pg-header .user-manage{
+    /* position */
+    position: relative;
+    /* box */
+    float: right;
+    width: 151px;
+    height: 48px;
+    margin-right: 42px;
+
+
+}
+.pg-header a.top-cog{
+    float: left;
+    display: inline-block;
+    height: 48px;
+    padding: 0 27px;
+    line-height: 48px;
+    background-color: #2F3737;
+}
+
+
+/* 头像 */
+
+.pg-header .user-manage .user-head{
+    height: 48px;
+    width: 100%;
+    line-height: 48px;
+    text-align: center;
+}
+
+.pg-header .user-manage .user-head .user-head-sp{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    border-radius: 50%;
+
+}
+.pg-header .user-manage .user-head .user-head-sp img{
+    border-radius: 50%;
+}
+
+
+
+.pg-header .user-manage .user-manage-menus{
+    /* position */
+    position: absolute;
+    top: 48px;
+    right: 0;
+
+    /* box */
+    width: 334px;
+    height: 135px;
+    background-color: #354343;
+    display: none;
+    border-top: 1px solid white;
+}
+
+.pg-header .user-manage:hover .user-manage-menus{
+    display:block;
+}
+
+/* 管理员菜单 */
+.user-manage-menus .user-head-msg{
+    height: 94px;
+    width: 100%;
+
+}
+.user-manage-menus .user-head-btns{
+    height: 41px;
+    width: 100%;
+    background-color: #515555;
+}
+.user-head-msg .user-msg-hdic{
+    margin: 23px 0 0 64px;
+    float: left;
+}
+
+.user-head-msg .user-msg-hdic .info-cell{
+
+    padding: 4px;
+}
+.user-head-msg .user-msg-hdic .info-cell:hover{
+    background-color: #515555;
+}
+
+.info-cell .info-cell-sp{
+    display: inline-block;
+    width: 48px;
+    height:48px;
+    border-radius: 50%;
+}
+.info-cell .info-cell-sp img{
+    border-radius: 50%;
+}
+
+/* 用户头像主要信息 */
+.user-head-msg .user-msg-contant{
+    margin: 23px 0 0 25px;
+    float: left;
+    color: white;
+}
+
+.user-head-msg .user-msg-contant a{
+    color: white;
+}
+.user-head-msg .user-msg-contant a:hover{
+    color: #91D2E1;
+}
+.user-head-btns .user-btn-mng,
+.user-head-btns .user-btn-cancel {
+    height: 41px;
+    width: 50%;
+    float: left;
+}
+.user-head-btns .user-btn-mng a,
+.user-head-btns .user-btn-cancel a{
+    display: inline-block;
+    width: 100%;
+    float:left;
+    text-align: center;
+    margin:10px 0 0 0;
+    color: white;
+}
+
+.user-head-btns .user-btn-mng a{
+    border-right: 1px solid white;
+}
+.user-head-btns .user-btn-mng a:hover,
+.user-head-btns .user-btn-cancel a:hover{
+    color: #91D2E1;
+}
+
+/* 右侧菜单 */
+.pg-body{
+    /* position */
+    position: absolute;
+    top:48px;
+    bottom: 0;
+
+    /* box */
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.pg-body .pg-body-nav{
+    position: fixed;
+    top: 48px;
+    bottom: 0;
+    width: 200px;
+    background-color: #354343;
+    overflow-x: hidden;
+}
+/* 每一个总菜单 */
+.pg-body .pg-body-nav .item{
+    overflow: hidden;
+}
+.pg-body .pg-body-nav .item .nav-title{
+    height: 39px;
+    width: 90%;
+    padding:0 5%;
+    background-color: #636665;
+}
+
+.pg-body .pg-body-nav .item .nav-content{
+    height: auto;
+    width: 100%;
+
+}
+
+.pg-body .pg-body-nav .item .nav-content a{
+    display: block;
+    height: 39px;
+    width: 90%;
+    padding: 0 5%;
+    color:white;
+    line-height: 39px;
+}
+.pg-body .pg-body-nav .item .nav-content a:hover{
+    background-color: #4d5f5f;
+}
+
+.pg-body .pg-body-nav .item .nav-title a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 39px;
+    color:white;
+}
+
+
+/* 模态对话框 */
+.model-filter{
+    position: fixed;
+    z-index: 108;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    background-color: black;
+
+    opacity: 0.5;
+}
+.model-widget{
+    position: fixed;
+    z-index: 109;
+    /* box */
+    width: 463px;
+    height: 230px;
+    background-color: #354343;
+}
+
+.model-widget .model-head{
+    height: 30px;
+    width: 100%;
+    background-color: #515555;
+}
+
+.model-widget .model-head:hover{
+    cursor: move;
+}
+
+.model-widget .model-head .model-head-l,
+.model-widget .model-head .model-head-r{
+    width: 50%;
+    float: left;
+    line-height: 30px;
+    color: white;
+}
+.model-widget .model-head .model-head-lp{
+    margin-left: 10px;
+}
+.model-widget .close-icon{
+    float: right;
+    display: block;
+    height: 20px;
+    width: 21px;
+    margin:2px 5px 0 0;
+    background-image: url("../imgs/close.png");
+}
+
+.model-widget .close-icon:hover{
+
+}
+
+.model-widget .model-body{
+    width: 100%;
+    height: 200px;
+
+
+}
+
+.model-widget .model-body .model-body-l,
+.model-widget .model-body .model-body-r{
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+.login-body{
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid white;
+}
+.login-body .pr,.login-body  .box-btn{
+    margin: 0 auto 20px;
+    width: 200px;
+    height: 30px;
+    background-color: #91D2E1;
+}
+.login-body .pr input[type='text'],
+.login-body .pr input[type='password']{
+    width: 100%;
+    height: 100%;
+}
+
+.box-btn-login{
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .filter{
+            background-color: rgba(0,0,0,0);
+            position: fixed;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            z-index: 10;
+        }
+        .model{
+            height: 400px;
+            width: 600px;
+            background-color: chocolate;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin: -200px 0 0 -300px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="添加" ch="addline">
+<table border="1">
+    <thead>
+        <tr>
+            <td>addr</td>
+            <td>ip</td>
+            <td>编辑</td>
+            <td>删除</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td titem="host">10.0.0.1</td>
+            <td titem="port">10</td>
+            <td><input type="button" value="编辑" ch="edit"></td>
+            <td><input type="button" value="删除" ch="cancelline"></td>
+        </tr>
+        <tr>
+            <td titem="host">10.0.0.2</td>
+            <td titem="port">11</td>
+            <td><input type="button" value="编辑" ch="edit"></td>
+            <td><input type="button" value="删除" ch="cancelline"></td>
+        </tr>
+        <tr>
+            <td titem="host">10.0.0.3</td>
+            <td titem="port">12</td>
+            <td><input type="button" value="编辑" ch="edit"></td>
+            <td><input type="button" value="删除" ch="cancelline"></td>
+        </tr>
+    </tbody>
+<div class="filter hide">
+    <div class="model">
+        <div>
+            主机名: <input type="text" ch="intohost" />
+            port: <input type="text"  ch="intoport" />
+        </div>
+        <input type="button" ch="change" value="确认">
+        <input type="button" ch="cancel" value="取消">
+    </div>
+
+</div>
+</table>
+<script src="jquery.js"></script>
+<script>
+    var this_dict={host:null, port:null};
+
+    $("input[ch='cancel']").click(function () {
+        $(".filter").addClass("hide");
+            }
+    );
+    $("input[ch='change']").click(function () {
+        this_dict.host.text($("input[ch='intohost']").val());
+        this_dict.port.text($("input[ch='intoport']").val());
+        $(".filter").addClass("hide");
+    });
+
+    //延迟绑定
+    $("table").delegate("input[ch='edit']","click",function () {
+        $(".filter").removeClass("hide");
+        this_dict.host=$(this).parent().siblings("[titem='host']");
+        this_dict.port=$(this).parent().siblings("[titem='port']");
+        $("input[ch='intohost']").val(this_dict.host.text());
+        $("input[ch='intoport']").val(this_dict.port.text());
+    });
+    $("table").delegate("input[ch='cancelline']","click",function () {
+        $(this).parent().parent().remove();
+    });
+
+    $("input[ch='addline']").click(function () {
+        var ap_ht="<tr><td titem='host'>10.0.0.3</td><td titem='port'>12</td>" +
+                '<td><input type="button" value="编辑" ch="edit"></td>' +
+                        '<td><input type="button" value="删除" ch="cancelline"></td>'+
+                "</tr>";
+        $("table tbody").append(ap_ht);
+    })
+</script>
+</body>
+</html>

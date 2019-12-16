@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .title-line{
+            height: 30px;
+        }
+        .title{
+            width: 50px;
+            height: 30px;
+            background-color: chocolate;
+            float: left;
+            cursor: pointer;
+            user-select: none;
+        }
+        .title:hover{
+            background-color: antiquewhite;
+        }
+        .hide{
+            display: none;
+        }
+        .active{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<div class="title-line">
+    <div  class="title" dt="t1">标题一</div>
+    <div  class="title" dt="t2">标题二</div>
+    <div  class="title" dt="t3">标题三</div>
+</div>
+<div class="item-line">
+    <div class="item" dn="t1">内容一</div>
+    <div class="item hide" dn="t2">内容二</div>
+    <div class="item hide" dn="t3">内容三</div>
+</div>
+<script src="jquery.js"></script>
+<script>
+    $(".title").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        var key=$(this).attr("dt");
+        $(".item-line").children("[dn="+key+"]").removeClass("hide").siblings().addClass("hide")
+
+    })
+</script>
+</body>
+</html>

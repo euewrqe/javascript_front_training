@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .title{
+            width: 200px;
+            height: 30px;
+            background-color: aquamarine;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="title">菜单一</div>
+    <div class="item hide">内容一</div>
+</div>
+<div>
+    <div class="title">菜单二</div>
+    <div class="item hide">内容二</div>
+</div>
+<div>
+    <div class="title">菜单三</div>
+    <div class="item hide">内容三</div>
+</div>
+<script src="jquery.js"></script>
+<script>
+    $(".title").click(function () {
+        console.log($(this).next().removeClass("hide").parent().siblings().children(".item").each(function () {
+            console.log(this);
+        }));
+    })
+</script>
+</body>
+</html>

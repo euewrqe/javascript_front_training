@@ -1,0 +1,514 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+a,span,p{
+    word-wrap: break-word; /*允许长单词换行*/
+    /*
+    word-wrap和word-break
+    word-wrap为了避免文本太长，是否允许单词内断句
+    word-break 怎样在单词内断句
+    */
+}
+div{
+    display: block;
+}
+a{
+    text-decoration: none;
+    color:black
+}
+.ico{
+    background:url("../imgs/icon-2.png") no-repeat;
+}
+/*header*/
+.pg-header,.head_content{
+    height: 44px;
+    background-color: #CEEAA4;
+}
+.pg-header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;    /*最外面*/
+    top: 0;
+    left: 0;
+}
+.head_content{
+    width: 1016px;
+    margin: 0 auto;
+    line-height: 44px;
+    position: relative;
+}
+.logo{
+    display: block;
+    width: 120px;
+    height: 23px;
+    background:url("../imgs/logo-2.png")  no-repeat;
+    margin-top: 11px;
+    float: left;
+}
+
+.nav_menu,.login_menu{
+    font-size: 12px;
+}
+.nav_menu{
+    float: left;
+    margin-left: 20px;
+}
+
+.nav_menu a.tb,.login_menu a.login_btn_a{
+    display: inline-block;
+    padding: 0 13px 0 16px;
+    margin-left: -2px;
+}
+.nav_menu a.tb:hover,.login_menu a:hover{
+    background-color: #f7fa2d;
+}
+.login_menu{
+    position: absolute;
+    right:131px;
+}
+
+.content-img{
+    cursor:zoom-in;
+    position: relative;
+}
+
+.head_search{
+    float: right;
+    margin-top: 6px;
+
+}
+.search_txt{
+    width: 91px;
+    height: 25px;
+    color:#333333;
+    padding: 2px 2px 2px 5px;
+}
+.search_btn{
+    height: 29px;
+    width: 30px;
+    display: inline-block;
+    border-left: 0;
+}
+span.search_icon{
+    background-position: 2px 4px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.head_search a.search_btn, .search_txt{
+    float: left;
+    border: 1px solid #eeeeee;
+    background-color: #f4f4f4;
+}
+
+.hidden{
+    display: none !important;
+}
+
+/*main*/
+
+.main-content-band{
+    padding-top: 44px;
+    background-color: #eeeeee;
+    clear: both;
+}
+
+.main-content{
+    width: 960px;
+    margin: 0 auto;
+    padding: 6px 20px 60px;
+    background-color: #fff;
+    overflow: hidden;        /*超出部分隐藏*/
+    height: auto;
+    min-height: 500px;
+}
+.footer-band{
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: #fff;
+    height: 300px;
+    border-top:1px solid black;
+}
+.content-L{
+    width: 630px;
+    overflow: hidden;
+    margin-top: 3px;
+    float: left;
+}
+.content-R{
+    width: 300px;
+    padding-top: 4px;
+    float:right;
+}
+
+/*左边*/
+/*.nav-top-area{*/
+    /*float: left;*/
+    /*width: ;*/
+/*}*/
+.sort-nav,.child-nav{
+    float: left;
+}
+.sort-nav{
+    margin-left: 100px;
+    margin-top: 3px;
+
+}
+.nav-top-area{
+    border-bottom: 1px solid black;
+}
+.nav-top-area:after{
+    content: ".";
+    display: block;
+    clear: both;
+    font-size: 0;
+}
+.nav-top-area a{
+    display: inline-block;
+    width: 60px;
+    height: 26px;
+    line-height: 26px;
+    margin: 3px 0 13px 0;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+a.publish-btn{
+    background-color: #84a42b;
+    color:white;
+    height: 30px;
+    width: 134px;
+    float: right;
+    display: inline-block;
+}
+
+.nav-top-area .hotbtn{
+    margin-right: 3px;
+}
+.nav-top-area .active{
+    background-color: #eeeeee;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+/*新闻*/
+.content-list{
+    clear: both;
+}
+.content-list .item{
+    font-size: 12px;
+    line-height: 100%;
+    border-bottom: 1px solid black;
+
+}
+.content-list .item .content-img{
+    background-color: #ffffff;
+    float: right;
+    margin: 10px 0 10px 10px;
+    border:1px solid black;
+    padding:1px;
+}
+
+.content-list .item  a.content-kind{
+    white-space: nowrap;
+    text-decoration: underline;
+}
+
+.content-list .item .content-img .img{
+    height:60px;
+    width:60px;
+    display: inline;
+}
+
+.content-list .item  .new-content{
+    line-height: 20px;
+}
+.content-list .item .show-content{
+    font-size: 14px;
+    font-weight: 700;
+    color:#369;
+}
+.content-list .item .area-summary{
+    line-height: 20px;
+}
+.content-list .item  .part2{
+    height: 30px;
+    margin: 5px 0;
+}
+.content-list .item .part2 a{
+    margin-right: 10px;
+    display: inline-block;
+}
+.content-list .item .part2  a span{
+    display: inline-block;
+    float: left;
+}
+.hand_icon{
+    height: 20px;
+    width: 22px;
+    background-position: 1px -23px;
+}
+.discus{
+    height: 22px;
+    width: 25px;
+    background-position: -33px -23px;
+}
+.collect{
+    height: 23px;
+    width: 26px;
+    background-position: -64px -22px;
+}
+.page-area{
+    margin-top: 9px;
+    overflow: hidden;
+    clear:both;
+}
+.digs{
+    float: left;
+}
+.digs ul{
+    list-style: none;
+    clear: both;
+    margin-left: -50px;
+}
+.digs li{
+    float: left;
+    margin-left: 10px;
+}
+.digs li a.dig_a{
+    display: inline-block;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.digs li a.active{
+    background:none;
+    border: none;
+}
+.content-R{
+    float: right;
+}
+/*chat*/
+.chat-area{
+    position: relative;
+}
+.chat-box{
+    width: 258px;
+    height: 480px;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: #eeeeee;
+    padding:0 20px;
+}
+.chat-head{
+    position:relative;
+}
+.chat-head div{
+    text-align: center;
+    font-size: 12px;
+    color:#999999;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2px 0;
+}
+.chat-public{
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    top:25px;
+}
+.chat-sender{
+    height: 85px;
+    padding: 0 16px;
+    width: 80%;
+    border-top: 1px solid black;
+    position: absolute;
+    bottom: 50px;
+    z-index: 2;
+}
+.chat-sender .inputer textarea.text{
+    resize:none;   /*表示不自动伸缩*/
+    height: 16px;
+    width: 95%;
+    border: none;
+    color:#B1B1B1;
+    padding: 0;
+    margin-top: 10px;
+}
+.chat-sender .inputer textarea.text:focus{
+background:red;
+border:1px solid  red;
+}
+.chat-sender .btn-send{
+    height: 20px;
+    width: 50px;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.custom-scroll-box ul{
+    list-style: none;
+    margin-left: -10px;
+}
+.custom-scroll-box ul li{
+    width: 90%;
+    position: relative;
+    margin: 5px 0;
+}
+.custom-scroll-box ul li .userpic{
+    height: 23px;
+    width: 23px;
+    background-color: #84a42b;
+    display: inline-block;
+
+}
+.custom-scroll-box ul li .userpic img{
+    width: 100%;
+    height: 100%;
+
+}
+.custom-scroll-box ul li .message-contain{
+    max-width: 75%;
+    min-width: 50%;
+    min-height: 49px;
+    padding:5px;
+    height: auto;
+    background-color: #B1B1B1;
+    border-radius: 5px;
+    display: inline-block;
+    word-wrap: break-word;
+}
+.custom-scroll-box ul li:after{
+    content: ".";
+    font-size: 0;
+    display: inline-block;
+    clear: both;
+}
+/*模态对话框*/
+.module-filter{
+    background: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    opacity: 0.5;
+}
+.module-login-mask{
+    height: 383px;
+    width: 787px;
+    border: 1px solid black;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -191px 0 0 -393px;
+    background-color: white;
+    z-index: 11;
+}
+.module-head{
+    height:29px ;
+    width: 100%;
+    background-color: #B1B1B1;
+
+}
+.module-head .module-head-left,.module-head .module-head-right{
+    width:49%;
+    height: 100%;
+    float: left;
+}
+.module-head .module-head-left span,
+.module-head .module-head-right span {
+    display: inline-block;
+    line-height: 29px;
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    font-weight: bold;
+}
+
+.module-close-a{
+    display: inline-block;
+    float: right;
+    height: 21px;
+    width:21px;
+    margin-top: 5px;
+}
+.module-close-a .module-close-sp{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-position: 0 -72px;
+}
+
+.module-login,.module-register{
+    width:49%;
+    height: 100%;
+    float: left;
+}
+.module-login{
+    border-right:1px dashed black ;
+}
+.module-login .tab-box,.module-register .step-box{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 27px 0;
+}
+.box-mobile-login,.box-user-login,.box-btn,
+.step-first,.reg-submit
+{
+    padding:0 91px;
+}
+
+.box-mobile-login .pr, .box-user-login .pr,
+.module-register .step-first .pr
+{
+    width: 205px;
+    height: 31px;
+    margin-bottom: 15px;
+}
+
+.box-mobile-login .pr select,.box-mobile-login .pr input,
+.box-user-login .pr select,.box-user-login .pr input,
+.module-register .step-first .pr input
+{
+    width: 174px;
+    padding: 5px 2px;
+    border: 1px solid black;
+}
+.tab-box a:hover{
+    font-weight: bold;
+}
+
+
+a.box-btn-login,a.reg-submit-step{
+    display: inline-block;
+    font-size: 14px;
+    width: 107px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: black;
+    color:white;
+    line-height: 30px;
+    text-align: center;
+}
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" class="checkall" value="全选">
+<input type="button" class="checkrev" value="反选">
+<input type="button" class="checkcancel" value="取消">
+<table border="1">
+    <thead>
+        <tr>
+            <td>check</td>
+            <td>id</td>
+            <td>addr</td>
+            <td>ip</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox" ch="ch" /></td>
+            <td>1</td>
+            <td>10.0.0.1</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" ch="ch" /></td>
+            <td>2</td>
+            <td>10.0.0.2</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" ch="ch" /></td>
+            <td>3</td>
+            <td>10.0.0.3</td>
+            <td>12</td>
+        </tr>
+    </tbody>
+</table>
+<script src="jquery.js"></script>
+<script>
+    $(".checkall").click(
+            function () {
+                $("input[ch='ch']").prop("checked",true);
+            }
+    );
+    $(".checkcancel").click(
+            function () {
+                $("input[ch='ch']").prop("checked",false);
+            }
+    );
+    $(".checkrev").click(
+            function () {
+                $.each($("input[ch='ch']"),function (k,v) {
+                    console.log(k,v);
+                    $(this).prop("checked")?
+                            $(this).prop("checked",false):
+                            $(this).prop("checked",true);
+                });
+            }
+    )
+</script>
+</body>
+</html>

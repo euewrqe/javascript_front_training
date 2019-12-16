@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仓库番</title>
+    <link href="css/sokoban.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="overflow: hidden">
+
+    <div id="game">
+        <div class="startLevel"></div>
+        <div id="game_message" class="display">
+            <p>step:<strong id="step">0</strong></p>
+            <p>boxes:<strong id="boxes">0</strong></p>
+        </div>
+
+        <!--游戏-->
+        <!--
+        <div id="wall"></div>
+        <div id="floor"></div>
+        <div id="box"></div>
+        <div id="empty"></div>
+        <div id="full"></div>
+        <div id="person"></div>
+        -->
+    </div>
+    <div id="messages">
+        <!--代码-->
+        <textarea cols="20" rows="20" id="code">
+_________________
+_____###_________
+_____#.#_________
+_____#-####______
+___###$-$.#______
+___#*-$@###______
+___####$#________
+______#.#________
+______###________
+        </textarea>
+        <input type="button" value="解析" onclick="Build('noauto')"/>
+
+    </div>
+    <script src="js/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="js/xmlScript.js"></script>
+    <script src="js/sokoban.js"></script>
+    <script>
+        Build("auto");
+    </script>
+
+</body>
+</html>

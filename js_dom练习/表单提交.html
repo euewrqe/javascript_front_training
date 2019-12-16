@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery.js"></script>
+<script>
+
+</script>
+<body>
+<form id="form" action="http://www.baidu.com" method="get">
+    用户名：<input type="text" />
+    密码：<input type="password" />
+    邮箱：<input type="text" />
+    验证码：<input type="text" />
+    <input type="submit" id="submit" />
+</form>
+<script>
+    $("#submit").click(function () {
+        var flag=true;
+        $("#form input[type='text'],#form input[type='password']").each(function () {
+            if(!$(this).val()){
+                $(this).after("<span>无法通过验证</span>");
+                flag=false;
+                return false;
+            }else{
+                $(this).next("span").remove();
+            }
+
+        });
+        if(!flag){
+                return false;
+            }else{
+            return true;
+        }
+    })
+</script>
+</body>
+</html>

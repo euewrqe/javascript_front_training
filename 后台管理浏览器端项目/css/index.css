@@ -1,0 +1,9 @@
+.pg-body-container{
+    position: absolute;
+    top: 48px;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+

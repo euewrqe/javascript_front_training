@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #favorite,#yuzu{
+            height: 200px;
+            width: 150px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<select id="favorite" name="favorite" multiple="multiple">
+    <option value="1">真红</option>
+    <option value="2">青空</option>
+    <option value="3">蓝</option>
+    <option value="4">梅娅</option>
+    <option value="5">雪雪</option>
+    <option value="6">幼刀</option>
+</select>
+<input type="button" value="-->" ch="toleft">
+<input type="button" value="<--" ch="toright">
+<select name="yuzu" id="yuzu" multiple="multiple">
+
+</select>
+
+<script src="jquery.js"></script>
+<script>
+    $("input[ch='toleft']").click(function () {
+        $("#favorite option:selected").appendTo("#yuzu");
+    });
+    $("input[ch='toright']").click(function () {
+        $("#favorite").append($("#yuzu option:selected"));
+    })
+</script>
+</body>
+</html>
