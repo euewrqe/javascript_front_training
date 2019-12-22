@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <label for="">id({{id}}):</label>
+        <input type="text" v-model="id" />
+        <label for="">name({{name}}):</label>
+        <input type="text" v-model="name" />
+        <button @click="add">btn</button>
+        <!--
+            @click.prevent 阻止默认事件
+        -->
+        <ul>
+            <!--
+                key只能使用字符串或数字
+                如果内部元素不一致，要考虑到是否是没使用key，在使用v-for的时候指定唯一的值(string/number)
+                作为key
+                v-if和v-show：
+                v-if如果为false，元素不存在
+                v-show如果为false，display:none
+            -->
+            <li v-for="item in list">
+                <span v-if="item.id == 3 ||item.id == 2">特殊行</span>
+                <input type="checkbox" />
+                {{item.id}}---{{item.name}}
+            </li>
+        </ul>
+
+        <hr />
+    </div>
+    <!--vue dev tool-->
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                id:'',
+                name:'',
+                list: [
+                    {id: 0, name: "赵高"},
+                    {id: 1, name: "韩非"},
+                    {id: 2, name: "吕布"},
+                    {id: 3, name: "曹操"},
+                    {id: 4, name: "里斯"},
+                ]
+            }, 
+            methods: {
+                add(){
+                    this.list.unshift({id: this.id, name: this.name});
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

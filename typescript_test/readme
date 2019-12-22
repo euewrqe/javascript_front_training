@@ -1,0 +1,12 @@
+typescript是微软开发的
+tsc first.ts
+自动生成js脚本
+
+基本数据类型:
+boolean, number, string, 数组, 元组, Tuple, enum, any, void, null, undefined
+
+node，mongodb
+
+coffee script:
+编译
+coffee --compile .\first.coffee

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .red_color{
+            color: red;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .active{
+            letter-spacing: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--:class的每一个项可以是类名，可以是表达式-->
+        <h1 :class="['red_color', 'italic', {'active':flag}]">添加类</h1>
+        <h1 :class="{red_color:true, italic:false}">第二行</h1>
+        <h1 :class="myclass">第三行</h1>
+        <h1 :style="{'color': 'red', 'font-style': 'italic'}">第四行</h1>
+        <h1 :style="mystyle">第五行</h1>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data:{
+                flag:false,
+                myclass:{red_color:false, italic:true},
+                mystyle:{'color': 'red', 'letter-spacing': '2em'}
+            }
+        })
+    </script>
+</body>
+</html>
