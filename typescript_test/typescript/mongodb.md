@@ -120,3 +120,6 @@ db.runCommand({group: {
     }
     condition: {m:$gt:9}
 }})
+
+固定集合:
+createCommand({"", {size:100, capped:true, max:10}})

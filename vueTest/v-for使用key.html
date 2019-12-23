@@ -27,7 +27,7 @@
                 v-if如果为false，元素不存在
                 v-show如果为false，display:none
             -->
-            <li v-for="item in list">
+            <li v-for="item in list" :key="">
                 <span v-if="item.id == 3 ||item.id == 2">特殊行</span>
                 <input type="checkbox" />
                 {{item.id}}---{{item.name}}

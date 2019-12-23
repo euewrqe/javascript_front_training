@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{"fddd"|filter01}}
+    </div>
+
+    <script>
+
+        Vue.filter('filter01', function(data, arg1, arg2){  // {{"xxx"|filter01}}, 
+                                                            //{{"xxx"|filter01(arg1, arg2)}}
+            return data + "123"
+        })
+        var vm = new Vue({
+            el: "#app",   // 这个实例控制div#app
+            data:{    //data中存放资源
+                msg: '好',
+                s1: '我把'
+            },
+            filters:{}  // 私有过滤器
+        })
+        //过滤器调用的时候是就近原则，如果同时有全局又有私有，优先私有
+        //按键修饰符@keyup:enter
+        /**
+            enter, tab, delete, esc, space, up, down, left, right
+            @keyup:[keycode]
+            自定义键盘码
+            Vue.config.keyCodes.f2 = 123
+        */
+
+        // vue自定义指令， 指令前面必须加v-
+        /*
+        参数一：指令名称，调用时加v-，参数二：对象
+        Vue.directive("focu", {})
+
+        对象中的钩子
+        bind 每当指令绑定到函数上的时候，自动执行函数，执行一次
+        inserted 元素插入到dom中的时候会自动执行
+        update 当指令更新的时候会执行更新，多次
+        */
+
+    </script>
+</body>
+</html>

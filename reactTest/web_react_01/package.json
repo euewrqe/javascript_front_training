@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open firefox --port 3000 --host 127.0.0.1"
+    "run": "webpack-dev-server --open firefox --port 3000 --host 127.0.0.1"
   },
   "author": "",
   "license": "ISC",

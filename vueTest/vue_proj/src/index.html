@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" >
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" >
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="app">
+        <a href="/listtest.html">listtest</a>
+    </div>
+    <div id="list_test">
+
+        <ul>
+            <li v-for="(item) in list" :key="item"> <!--:key指定每个元素中的那个值作为唯一值，
+                把li内部的内容绑定到一起-->
+                <input type="checkbox">
+                {{item}}
+            </li>
+        </ul>
+        <button @click="add">btn</button>
+    </div>
+
+    <div id="render_component">
+        <login></login>
+    </div>
+
+    <div id="render_test">
+        我姥姥
+    </div>
+
+    <div id="render_template">
+        我姥姥
+    </div>
+    <script src="/dist/bundle.js" type="application/javascript;charset=utf-8"></script>
+</body>
+</html>

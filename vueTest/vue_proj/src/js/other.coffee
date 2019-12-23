@@ -1,0 +1,1 @@
+export square = (x) -> x * x

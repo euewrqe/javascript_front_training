@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-focus="myfunc"></button>
+    </div>
+
+    <script>
+        Vue.directive('focus', {
+            bind: function(el){
+                alert(el.myfunc());
+            },
+            inserted: function(el){
+                alert("inserted:"+el.myfunc());
+            }
+        })
+        var vm = new Vue({
+            el: "#app",   // 这个实例控制div#app
+            data:{    //data中存放资源
+                msg: '好',
+                s1: '我把'
+            },
+            methods:{
+                myfunc(){
+                    return "ffff";
+                }
+            }
+        })
+        
+        
+    </script>
+</body>
+</html>
